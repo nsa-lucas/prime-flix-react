@@ -114,6 +114,10 @@
     .contentMovies {
         grid-template-columns: repeat(1, 1fr);
 
+        .movie {
+            margin: 0 auto;
+        }
+
         a {
             span {
                 font-size: 8px;
