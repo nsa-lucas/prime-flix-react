@@ -1,0 +1,23 @@
+.notfound {
+    width: 100%;
+    height: calc(100vh - var(--heightHeader));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.notfound h1,
+.notfound h2,
+.notfound a {
+    text-align: center;
+}
+
+.notfound h1 {
+    font-size: 96px;
+}
+
+.notfound a {
+    color: #116feb;
+    margin-top: 14px;
+}

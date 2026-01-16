@@ -1,0 +1,123 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 900px;
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+.titleBar {
+    display: inline-flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 14px 14px 28px;
+}
+
+.contentMovies {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+
+    margin: 14px 14px 14px;
+}
+
+.movie {
+    max-width: 300px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .movieTitle {
+        font-size: 18px;
+    }
+
+    .movieBanner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        margin-top: 14px;
+
+        .options {
+            position: absolute;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 14px;
+
+            a {
+                color: #fff;
+                text-align: center;
+                padding: 8px 14px;
+
+                text-decoration: none;
+
+                cursor: pointer;
+
+                border-radius: 18px;
+                border: 1px solid #fff;
+
+                box-shadow: 0px 5px 35px -5px #fff;
+
+                transition: all 0.2s;
+
+                z-index: 1;
+
+                filter: opacity(0);
+            }
+        }
+
+        img {
+            max-width: 100%;
+
+            border-radius: 8px;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.2s,
+                filter 0.2s;
+        }
+        &:hover {
+            img {
+                transform: scale(1.1);
+                filter: blur(2px) brightness(0.3);
+            }
+
+            a {
+                filter: opacity(1);
+            }
+        }
+    }
+}
+
+@media (width <= 768px) {
+    .contentMovies {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (width <= 590px) {
+    .contentMovies {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width <= 460px) {
+    .contentMovies {
+        grid-template-columns: repeat(1, 1fr);
+
+        a {
+            span {
+                font-size: 8px;
+            }
+        }
+    }
+}
