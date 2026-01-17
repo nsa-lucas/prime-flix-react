@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Filme from './pages/Filme';
@@ -8,7 +8,7 @@ import NotFound from './pages/NotFound';
 
 export default function RoutesApp() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -17,6 +17,6 @@ export default function RoutesApp() {
 
                 <Route path="*" element={<NotFound />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
