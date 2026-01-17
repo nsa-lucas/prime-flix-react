@@ -31,7 +31,7 @@ export default function Filme() {
     }, [navigate, id]);
 
     function handleFavorite() {
-        const favoritos = localStorage.getItem('@favoritos');
+        const favoritos = localStorage.getItem('@primeflix');
 
         let lista_favoritos = JSON.parse(favoritos) || [];
 
@@ -46,7 +46,7 @@ export default function Filme() {
         }
 
         lista_favoritos.push(filme);
-        localStorage.setItem('@favoritos', JSON.stringify(lista_favoritos));
+        localStorage.setItem('@primeflix', JSON.stringify(lista_favoritos));
 
         toast.success('Filme salvo com sucesso!');
     }

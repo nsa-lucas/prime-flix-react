@@ -8,7 +8,7 @@ export default function Favoritos() {
     const [favoritos, setFavoritos] = useState([]);
 
     useEffect(() => {
-        const lista_favoritos = localStorage.getItem('@favoritos');
+        const lista_favoritos = localStorage.getItem('@primeflix');
 
         setFavoritos(JSON.parse(lista_favoritos)) || [];
 
@@ -24,10 +24,10 @@ export default function Favoritos() {
 
         setFavoritos(filter);
 
-        localStorage.setItem('@favoritos', JSON.stringify(filter));
+        localStorage.setItem('@primeflix', JSON.stringify(filter));
 
         function desfazer() {
-            localStorage.setItem('@favoritos', JSON.stringify(backupMovie));
+            localStorage.setItem('@primeflix', JSON.stringify(backupMovie));
 
             setFavoritos(backupMovie);
 
